@@ -3,9 +3,15 @@ html,body{
 }
 
 .list-group-answers{
-	font-size: 2em;
+	font-size: 1.3em;
+	padding-top: 20px;
+	padding-bottom: 20px;
 }
 
 .question, .pager{
 	font-size: 1.2em;
+}
+
+.pager-btn{;
+	border: 1px solid #ccc !important;
 }
