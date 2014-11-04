@@ -1,0 +1,11 @@
+html,body{
+	background: deepskyblue;
+}
+
+.list-group-answers{
+	font-size: 2em;
+}
+
+.question, .pager{
+	font-size: 1.2em;
+}

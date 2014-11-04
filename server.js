@@ -1,10 +1,12 @@
-var express = require('express');
-var bodyParser = require('body-parser');
-var app = express();
-var port = process.env.PORT || 8000;
+var express     = require('express');
+var bodyParser  = require('body-parser');
+var app         = express();
+var port        = process.env.PORT || 8000;
+var path        = __dirname; 
 
 //config
 app.use(bodyParser());
+app.use(express.static(path));
 app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 app.use(function (req, res, next) {
 
