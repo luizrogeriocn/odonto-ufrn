@@ -32,7 +32,7 @@
 		</div>
 	    <div class="navbar-collapse collapse navbar-inverse-collapse">
     	    <ul class="nav navbar-nav">
-    	      <li class="active"><a href="#">Sobre</a></li>
+    	      <li><a href="#">Sobre</a></li>
     	      <li><a href="#">Quem somos?</a></li>
     	    </ul>
     	</div>
@@ -45,9 +45,9 @@
 		  <!-- Default panel contents -->
 		  <div class="panel-heading center">Pergunta #{{current_question_id+1}}</div>
 		  <div class="panel-body">
-		    <p class="question center">{{question.text}}</p>
+		    <p class="question">{{current_question.text}}</p>
 		    <div class="list-group list-group-answers">
-		      <a href="" class="list-group-item" ng-repeat="alternative in question.alternatives">
+		      <a href="" class="list-group-item" ng-repeat="alternative in current_question.alternatives">
 		        {{alternative.text}}
 		      </a>
 		    </div>

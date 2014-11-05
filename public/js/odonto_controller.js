@@ -19,14 +19,22 @@ app.controller("odonto_controller", function($scope){
     $scope.current_question = $scope.questions[$scope.current_question_id];
 
     $scope.next_question = function(){
-        console.log("next question.");
-        $scope.current_question_id += 1;
-        $scope.current_question = $scope.questions[$scope.current_question_id];
+        if($scope.current_question_id+1 < $scope.questions.length){
+            console.log("next question.");
+            $scope.current_question_id += 1;
+            $scope.current_question = $scope.questions[$scope.current_question_id];
+        }
+        else
+            console.log("Essa é a última questão.");
     };
     
     $scope.previous_question = function(id){
-        console.log("previous question.")
-        $scope.current_question_id -= 1;
-        $scope.current_question = $scope.questions[$scope.current_question_id];
+        if($scope.current_question_id-1 >= 0){
+            console.log("previous question.")
+            $scope.current_question_id -= 1;
+            $scope.current_question = $scope.questions[$scope.current_question_id];
+        }
+        else
+            console.log("Essa é a primeira questão");
     };
 });
