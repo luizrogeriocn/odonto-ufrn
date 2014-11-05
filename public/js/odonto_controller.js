@@ -10,9 +10,11 @@ app.config( function ( $routeProvider ) {
 });
 
 app.controller("odonto_controller", function($scope){
-    $scope.question = {text: "Você possui dentes mal posicionados?", alternatives: [{text: "sim", score: 1, color: "red"}, {text: "não", score: 0, color: "blue"}]};
-    $scope.question2 = {text: "Qual seu sexo?", alternatives: [{text: "Homem", score: 1, color: "blue"}, {text: "Mulher", score: 0, color: "red"}]};
-    $scope.questions = [$scope.question, $scope.question2];
+    $scope.question = {text: "Qual seu sexo?", alternatives: [{text: "Homem", score: 1, color: "blue"}, {text: "Mulher", score: 0, color: "red"}]};
+    $scope.question2 = {text: "Qual a sua idade?", alternatives: [{text: "Até 10 anos", score: 1, color: "blue"}, {text: "10 a 15 anos", score: 0, color: "red"}, {text: "15 a 20 anos", score: 0, color: "red"}, {text: "Mais de 20 anos", score: 0, color: "red"}]};
+    $scope.question3 = {text: "Você possui dentes a mais?", alternatives: [{text: "sim", score: 1, color: "red"}, {text: "não", score: 0, color: "blue"}]};
+    $scope.question4 = {text: "Você possui dentes mal posicionados?", alternatives: [{text: "sim", score: 1, color: "red"}, {text: "não", score: 0, color: "blue"}]};
+    $scope.questions = [$scope.question, $scope.question2, $scope.question3, $scope.question4];
 
     $scope.current_question;
     $scope.current_question_id = 0;
