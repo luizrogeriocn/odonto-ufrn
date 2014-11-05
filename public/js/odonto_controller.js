@@ -3,9 +3,15 @@ var app = angular.module( "odonto_app", [] );
 app.config( function ( $routeProvider ) {
   $routeProvider
   .when( '/index', { 
-        templateUrl: 'index.html',
+        templateUrl: 'public/quiz.html',
         controller: 'odonto_controller'
     })
+  .when( '/about',{
+        templateUrl: 'public/about.html'
+  })
+  .when( '/quiz',{
+        templateUrl: 'public/quiz.html'
+  })
   .otherwise( { redirectTo: '/index' } );
 });
 

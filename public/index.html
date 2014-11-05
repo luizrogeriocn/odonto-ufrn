@@ -32,36 +32,14 @@
 		</div>
 	    <div class="navbar-collapse collapse navbar-inverse-collapse">
     	    <ul class="nav navbar-nav">
-    	      <li><a href="#">Sobre</a></li>
-    	      <li><a href="#">Quem somos?</a></li>
+    	      <li><a href="#/quiz">Quiz</a></li>
+    	      <li><a href="#/about">Sobre</a></li>
     	    </ul>
     	</div>
 	  </div>
 	</nav>
 
-	<div class="container">
-		<!-- HEADER AND TODO COUNT -->
-		<div class="panel panel-default question-panel">
-		  <!-- Default panel contents -->
-		  <div class="panel-heading center">Pergunta #{{current_question_id+1}}</div>
-		  <div class="panel-body">
-		    <p class="question">{{current_question.text}}</p>
-		    <div class="list-group list-group-answers">
-		      <a href="" class="list-group-item" ng-repeat="alternative in current_question.alternatives">
-		        {{alternative.text}}
-		      </a>
-		    </div>
-		    <ul class="pager">
-		      <li><a class="pager-btn" href="" ng-click="previous_question()">Anterior</a></li>
-		      <li><a class="pager-btn" href="" ng-click="next_question()">Próximo</a></li>
-		    </ul>
-		  </div>
-
-
-		</div>
-
-	</div>
-
+	<div ng-view></div>
 
 	<!-- SPELLS -->
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><!-- load jquery -->

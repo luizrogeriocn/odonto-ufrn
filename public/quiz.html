@@ -1,0 +1,19 @@
+<div class="container">
+	<!-- HEADER AND TODO COUNT -->
+	<div class="panel panel-default question-panel">
+	  <!-- Default panel contents -->
+	  <div class="panel-heading center">Pergunta #{{current_question_id+1}}</div>
+	  <div class="panel-body">
+	    <p class="question">{{current_question.text}}</p>
+	    <div class="list-group list-group-answers">
+	      <a href="" class="list-group-item" ng-repeat="alternative in current_question.alternatives">
+	        {{alternative.text}}
+	      </a>
+	    </div>
+	    <ul class="pager">
+	      <li><a class="pager-btn" href="" ng-click="previous_question()">Anterior</a></li>
+	      <li><a class="pager-btn" href="" ng-click="next_question()">Próximo</a></li>
+	    </ul>
+	  </div>
+	</div>
+</div>
