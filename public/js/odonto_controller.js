@@ -12,7 +12,7 @@ app.config( function ( $routeProvider ) {
   .when( '/quiz',{
         templateUrl: 'public/quiz.html'
   })
-  .otherwise( { redirectTo: '/index' } );
+  .otherwise( { redirectTo: '/quiz' } );
 });
 
 app.controller("odonto_controller", function($scope){
