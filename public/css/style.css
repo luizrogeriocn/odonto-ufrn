@@ -1,5 +1,5 @@
 html,body{
-	background: deepskyblue;
+	background: #d2e5e3;
 }
 
 .list-group-answers{
@@ -14,4 +14,25 @@ html,body{
 
 .pager-btn{;
 	border: 1px solid #ccc !important;
+}
+
+.question-panel{
+	margin-top: 2em
+}
+
+.center{
+	text-align: center
+}
+
+.panel-heading{
+	font-size: 1.2em;
+	text-transform: uppercase;
+	background: #f28c04 !important;
+	color: white !important;
+	border-bottom: 3px solid #d47100 !important;
+}
+
+.panel{
+	border: none;
+	border-bottom: 4px solid #c7c7c7 !important;
 }
