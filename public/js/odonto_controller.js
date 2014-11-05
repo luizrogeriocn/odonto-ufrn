@@ -29,7 +29,7 @@ app.controller("odonto_controller", function($scope){
     };
     
     $scope.previous_question = function(id){
-        if($scope.current_question_id-1 > 0){
+        if($scope.current_question_id-1 >= 0){
             console.log("previous question.")
             $scope.current_question_id -= 1;
             $scope.current_question = $scope.questions[$scope.current_question_id];
