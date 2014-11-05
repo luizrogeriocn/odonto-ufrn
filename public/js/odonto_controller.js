@@ -57,6 +57,7 @@ app.controller("odonto_controller", function($scope){
     };
 
     $scope.calculate_score = function(){
+        $scope.current_score = 0;
         var chosen_question;
 
         for (var i = $scope.questions.length - 1; i >= 0; i--) {
