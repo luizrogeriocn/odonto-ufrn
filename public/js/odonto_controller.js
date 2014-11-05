@@ -26,6 +26,8 @@ app.controller("odonto_controller", function($scope){
     $scope.current_question_id = 0;
     $scope.current_question = $scope.questions[$scope.current_question_id];
 
+    $scope.choices = [];
+
     $scope.next_question = function(){
         if($scope.current_question_id+1 < $scope.questions.length){
             console.log("next question.");
@@ -44,5 +46,10 @@ app.controller("odonto_controller", function($scope){
         }
         else
             console.log("Essa é a primeira questão");
+    };
+
+    $scope.choose_alternative = function(question, alternative){
+        $scope.choices[question] = alternative;
+        console.log("Você escolheu a alternativa #"+ (alternative+1) +" na questão #"+(question+1));
     };
 });

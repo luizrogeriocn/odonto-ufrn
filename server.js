@@ -5,8 +5,8 @@ var port        = process.env.PORT || 8000;
 var path        = __dirname; 
 
 //config
-app.use(bodyParser());
 app.use(express.static(path));
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 app.use(function (req, res, next) {
 

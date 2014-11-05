@@ -6,7 +6,7 @@
 	  <div class="panel-body">
 	    <p class="question">{{current_question.text}}</p>
 	    <div class="list-group list-group-answers">
-	      <a href="" class="list-group-item" ng-repeat="alternative in current_question.alternatives">
+	      <a href="" class="list-group-item" ng-class="{ 'active': choices[current_question_id] == $index}" ng-click="choose_alternative(current_question_id ,$index)" ng-repeat="alternative in current_question.alternatives">
 	        {{alternative.text}}
 	      </a>
 	    </div>
