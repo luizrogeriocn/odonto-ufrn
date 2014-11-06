@@ -32,7 +32,10 @@ app.controller("odonto_controller", function($scope){
         $scope.current_question = $scope.questions[$scope.current_question_id];
         $scope.choices = [];
         $scope.incomplete = false;
-    }();
+        console.log("init");
+    };
+
+    $scope.init_quiz();
 
     $scope.next_question = function(){
         if($scope.current_question_id+1 < $scope.questions.length){
