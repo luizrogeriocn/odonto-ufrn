@@ -18,7 +18,7 @@ app.config( function ( $routeProvider ) {
   .otherwise( { redirectTo: '/quiz' } );
 });
 
-app.controller("odonto_controller", function($scope, $location){
+app.controller("odonto_controller", function($scope){
     $scope.question = {text: "Qual seu sexo?", alternatives: [{text: "Homem", score: 8, color: "blue"}, {text: "Mulher", score: 10, color: "red"}]};
     $scope.question2 = {text: "Qual a sua idade?", alternatives: [{text: "Até 10 anos", score: 4, color: "blue"}, {text: "10 a 15 anos", score: 10, color: "red"}, {text: "15 a 20 anos", score: 8, color: "red"}, {text: "Mais de 20 anos", score: 8, color: "red"}]};
     $scope.question3 = {text: "Você possui dentes mal posicionados?", alternatives: [{text: "Na frente", score: 6, color: "red"}, {text: "Na parte de trás", score: 8, color: "blue"}, {text: "Na parte de trás e na frente", score: 10, color: "blue"}, {text: "Não", score: 4, color: "blue"}]};
