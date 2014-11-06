@@ -27,12 +27,11 @@ app.controller("odonto_controller", function($scope){
     $scope.question6 = {text: "Você se considera uma pessoa bicuda?", alternatives: [{text: "Sim", score: 10, color: "red"}, {text: "Não", score: 4, color: "blue"}]};
     $scope.questions = [$scope.question, $scope.question2, $scope.question3, $scope.question4, $scope.question5, $scope.question6];
 
-    $scope.current_question;
-    $scope.current_question_id = 0;
-    $scope.current_question = $scope.questions[$scope.current_question_id];
-
-    $scope.choices = [];
-    $scope.current_score = 0;
+    $scope.init_quiz = function(){
+        $scope.current_question_id = 0;
+        $scope.current_question = $scope.questions[$scope.current_question_id];
+        $scope.choices = [];
+    }();
 
     $scope.next_question = function(){
         if($scope.current_question_id+1 < $scope.questions.length){
@@ -76,5 +75,11 @@ app.controller("odonto_controller", function($scope){
             }
         };
         console.log("Seu score atual é: "+$scope.current_score);
+    };
+
+    $scope.init_quiz = function(){
+        $scope.current_question_id = 0;
+        $scope.current_question = $scope.questions[$scope.current_question_id];
+        $scope.choices = [];
     };
 });
