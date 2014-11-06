@@ -42,4 +42,10 @@ html,body{
 	margin-top: -1px;
 	padding: 2px;
 	font-size: 15px;
+	border: 1px solid transparent;
+	border-radius: 3px;
+}
+
+.alert-danger {
+	border-color: #ebccd1;
 }
