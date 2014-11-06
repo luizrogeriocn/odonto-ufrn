@@ -31,6 +31,7 @@ app.controller("odonto_controller", function($scope){
         $scope.current_question_id = 0;
         $scope.current_question = $scope.questions[$scope.current_question_id];
         $scope.choices = [];
+        $scope.incomplete = false;
     }();
 
     $scope.next_question = function(){
@@ -55,9 +56,10 @@ app.controller("odonto_controller", function($scope){
     };
 
     $scope.get_result = function(){
-        if($scope.choices.length < $scope.questions.length)
-            $scope.incomplete = true;
-            //alert("Por favor, responda todas as questões.");
+        for (var i = $scope.questions.length - 1; i >= 0; i--) {
+            if($scope.choices[i] == undefined)
+                $scope.incomplete = true;
+        };
     };
 
     $scope.choose_alternative = function(question, alternative){
@@ -79,10 +81,4 @@ app.controller("odonto_controller", function($scope){
         console.log("Seu score atual é: "+$scope.current_score);
     };
 
-    $scope.init_quiz = function(){
-        $scope.incomplete = false;
-        $scope.current_question_id = 0;
-        $scope.current_question = $scope.questions[$scope.current_question_id];
-        $scope.choices = [];
-    };
 });
