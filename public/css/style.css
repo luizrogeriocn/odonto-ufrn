@@ -36,22 +36,3 @@ html,body{
 	border: none;
 	border-bottom: 4px solid #c7c7c7 !important;
 }
-
-.enter-setup {
-    position:absolute;
-    -webkit-transition: 0.3s ease-out all;
-    -webkit-transform:translate3d(100%,0,0) ;
-}
-.enter-setup.enter-start {
-    position:absolute;
-    -webkit-transform:translate3d(0,0,0) ;
-}
-.leave-setup {
-    position:absolute;
-    -webkit-transition: 0.3s ease-out all;
-    -webkit-transform:translate3d(0,0,0);
-}
-.leave-setup.leave-start {
-    position:absolute;
-    -webkit-transform:translate3d(-100%,0,0);
-}

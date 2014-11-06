@@ -1,4 +1,4 @@
-var app = angular.module( "odonto_app", ['ngTouch'] );
+var app = angular.module( "odonto_app", ['ngRoute', 'ngTouch'] );
 
 app.config( function ( $routeProvider ) {
   $routeProvider
