@@ -48,6 +48,7 @@ app.controller("odonto_controller", function($scope){
             console.log("previous question.")
             $scope.current_question_id -= 1;
             $scope.current_question = $scope.questions[$scope.current_question_id];
+            $scope.incomplete = false;
         }
         else
             console.log("Essa é a primeira questão");
@@ -55,7 +56,8 @@ app.controller("odonto_controller", function($scope){
 
     $scope.get_result = function(){
         if($scope.choices.length < $scope.questions.length)
-            alert("Por favor, responda todas as questões.");
+            $scope.incomplete = true;
+            //alert("Por favor, responda todas as questões.");
     };
 
     $scope.choose_alternative = function(question, alternative){
@@ -78,6 +80,7 @@ app.controller("odonto_controller", function($scope){
     };
 
     $scope.init_quiz = function(){
+        $scope.incomplete = false;
         $scope.current_question_id = 0;
         $scope.current_question = $scope.questions[$scope.current_question_id];
         $scope.choices = [];
