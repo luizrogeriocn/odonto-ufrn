@@ -1,4 +1,4 @@
-var app = angular.module( "odonto_app", [] );
+var app = angular.module( "odonto_app", ['ngTouch'] );
 
 app.config( function ( $routeProvider ) {
   $routeProvider
@@ -21,7 +21,8 @@ app.controller("odonto_controller", function($scope){
     $scope.question3 = {text: "Você possui dentes mal posicionados?", alternatives: [{text: "Na frente", score: 6, color: "red"}, {text: "Na parte de trás", score: 8, color: "blue"}, {text: "Na parte de trás e na frente", score: 10, color: "blue"}, {text: "Não", score: 4, color: "blue"}]};
     $scope.question4 = {text: "Você possui dentes a mais?", alternatives: [{text: "Sim", score: 10, color: "red"}, {text: "Não", score: 4, color: "blue"}]};
     $scope.question5 = {text: "Você já perdeu algum dente?", alternatives: [{text: "Sim", score: 10, color: "red"}, {text: "Não", score: 4, color: "blue"}]};
-    $scope.questions = [$scope.question, $scope.question2, $scope.question3, $scope.question4, $scope.question5];
+    $scope.question6 = {text: "Você se considera uma pessoa bicuda?", alternatives: [{text: "Sim", score: 10, color: "red"}, {text: "Não", score: 4, color: "blue"}]};
+    $scope.questions = [$scope.question, $scope.question2, $scope.question3, $scope.question4, $scope.question5, $scope.question6];
 
     $scope.current_question;
     $scope.current_question_id = 0;
