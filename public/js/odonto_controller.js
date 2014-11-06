@@ -12,10 +12,13 @@ app.config( function ( $routeProvider ) {
   .when( '/quiz',{
         templateUrl: 'public/quiz.html'
   })
+  .when( '/result',{
+        templateUrl: 'public/result.html'
+  })
   .otherwise( { redirectTo: '/quiz' } );
 });
 
-app.controller("odonto_controller", function($scope){
+app.controller("odonto_controller", function($scope, $location){
     $scope.question = {text: "Qual seu sexo?", alternatives: [{text: "Homem", score: 8, color: "blue"}, {text: "Mulher", score: 10, color: "red"}]};
     $scope.question2 = {text: "Qual a sua idade?", alternatives: [{text: "Até 10 anos", score: 4, color: "blue"}, {text: "10 a 15 anos", score: 10, color: "red"}, {text: "15 a 20 anos", score: 8, color: "red"}, {text: "Mais de 20 anos", score: 8, color: "red"}]};
     $scope.question3 = {text: "Você possui dentes mal posicionados?", alternatives: [{text: "Na frente", score: 6, color: "red"}, {text: "Na parte de trás", score: 8, color: "blue"}, {text: "Na parte de trás e na frente", score: 10, color: "blue"}, {text: "Não", score: 4, color: "blue"}]};
@@ -38,7 +41,7 @@ app.controller("odonto_controller", function($scope){
             $scope.current_question = $scope.questions[$scope.current_question_id];
         }
         else
-            console.log("Essa é a última questão.");
+            console.log("Essa é a última questão");
     };
     
     $scope.previous_question = function(id){
@@ -49,6 +52,11 @@ app.controller("odonto_controller", function($scope){
         }
         else
             console.log("Essa é a primeira questão");
+    };
+
+    $scope.get_result = function(){
+        if($scope.choices.length < $scope.questions.length)
+            alert("Por favor, responda todas as questões.");
     };
 
     $scope.choose_alternative = function(question, alternative){

@@ -8,9 +8,13 @@
 	        {{alternative.text}}
 	      </a>
 	    </div>
-	    <ul class="pager">
+	    <ul class="pager" ng-if="current_question_id+1 < questions.length">
 	      <li><a class="pager-btn" href="" ng-click="previous_question()">Anterior</a></li>
-	      <li><a class="pager-btn" href="" ng-click="next_question()">Próximo</a></li>
+	      <li><a class="pager-btn" href="" ng-click="next_question()">{{choices.length != questions.length ? 'Próximo' : 'Resultado'}}</a></li>
+	    </ul>
+	    <ul class="pager" ng-if="current_question_id+1 == questions.length">
+	      <li><a class="pager-btn" href="" ng-click="previous_question()">Anterior</a></li>
+	      <li><a class="pager-btn" href="{{choices.length == questions.length ? '#/result' : ''}}" ng-click="get_result()">Resultado</a></li>
 	    </ul>
 	  </div>
 	</div>
