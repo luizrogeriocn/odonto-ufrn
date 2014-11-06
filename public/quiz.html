@@ -19,7 +19,7 @@
 	    </ul>
 	    <ul class="pager" ng-if="current_question_id+1 == questions.length">
 	      <li><a class="pager-btn" href="" ng-click="previous_question()">Anterior</a></li>
-	      <li><a class="pager-btn" href="{{!incomplete ? '#/result' : ''}}" ng-click="get_result()">Resultado</a></li>
+	      <li><a class="pager-btn" href="{{!incomplete ? '#/result' : '#/quiz'}}" ng-click="get_result()">Resultado</a></li>
 	    </ul>
 	  </div>
 	</div>
