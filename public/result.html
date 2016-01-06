@@ -2,17 +2,41 @@
 	<div class="panel panel-default question-panel">
 	  <div class="panel-heading center">Resultado</div>
 	  <div class="panel-body">
-	    <p class="center question">Pontuação: {{current_score}}</p>
-		    <div class="list-group list-group-answers">
-		      <a href="" class="list-group-item">
-		        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	    <p class="center question">Pontuação: {{result}}</p>
+
+			<div ng-if="first">
+		    <div class="list-group list-group-answers" ng-if="first">
+		      <a href="" class="list-group-item" ng-if="first">
+		        De acordo com suas respostas, concluímos que tem pouca probabilidade de você
+						possuir maloclusão, ou seja, você possui pouca probabilidade de necessitar de
+						tratamento ortodôntico. No entanto, caso continue com dúvidas, consulte um
+						ortodontista.
 		      </a>
 		    </div>
+		  </div>
+
+			<div ng-if="second">
+		    <div class="list-group list-group-answers" ng-if="second">
+		      <a href="" class="list-group-item" ng-if="second">
+		        De acordo com suas respostas, detectamos que há probabilidade de você possuir
+						maloclusão, ou seja, você provavelmente necessita de uma intervenção
+						ortodôntica EM CURTO PRAZO. Para averiguar, sugerimos que procure o
+						quanto antes um ortodontista para uma análise.
+		      </a>
+		    </div>
+		   </div>
+
+			<div ng-show="third">
+		    <div class="list-group list-group-answers" ng-if="third">
+		      <a href="" class="list-group-item" ng-if="third">
+		        De acordo com suas respostas, detectamos que você possui ALTA probabilidade
+						em possuir maloclusão, ou seja, você provavelmente necessita de uma
+						intervenção ortodôntica IMEDIATA. Para averiguar, sugerimos que procure o
+						quanto antes um ortodontista.
+		      </a>
+		    </div>
+		  </div>
+
 	    <ul class="pager">
 	      <li><a class="pager-btn" href="#/index" ng-click="init_quiz()">Repetir teste</a></li>
 	    </ul>
